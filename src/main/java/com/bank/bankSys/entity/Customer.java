@@ -1,9 +1,18 @@
 package com.bank.bankSys.entity;
 
-import lombok.*;
 import java.time.LocalDate;
-import jakarta.persistence.*;
 import java.util.List;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.Embedded;
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Getter
@@ -41,4 +50,7 @@ public class Customer extends Common {
 
     @OneToMany(mappedBy="customer", cascade=CascadeType.ALL)
     private List<Loan> loan;
+
+    
+    
 }

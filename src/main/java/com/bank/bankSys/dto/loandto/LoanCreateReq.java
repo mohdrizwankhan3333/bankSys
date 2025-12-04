@@ -6,5 +6,5 @@ public record LoanCreateReq(
     String type,
     BigDecimal amount,
     Integer tenureMonths,
-    BigDecimal interestrate){}
-
+    BigDecimal interestRate){}
+    

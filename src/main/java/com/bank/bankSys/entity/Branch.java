@@ -1,7 +1,15 @@
 package com.bank.bankSys.entity;
 import java.util.List;
-import jakarta.persistence.*;
-import lombok.*;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.Embedded;
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Getter
@@ -11,6 +19,7 @@ import lombok.*;
 public class Branch extends Common{
     private  String  code;
     private String name;
+    
    @Embedded
     private Address address;
 
@@ -27,5 +36,9 @@ public class Branch extends Common{
     //RelationShips
     @OneToMany(mappedBy="branch", cascade=CascadeType.ALL)
     private List<Employee> employees;
+
+    @OneToMany(mappedBy = "branch")
+private List<Account> accounts;
+
     
 }
