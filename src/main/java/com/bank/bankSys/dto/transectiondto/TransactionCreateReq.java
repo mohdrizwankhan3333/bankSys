@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 public record TransactionCreateReq(
     Long accountId,
     String type,
-    BigDecimal ammount,
+    BigDecimal amount,
     String description
 ) {
     

@@ -27,7 +27,7 @@ public class Card extends Common{
     @Enumerated(EnumType.STRING)
 private CardStatus status;
 
-@PrePersist
+@PrePersist   
 void defaultStatus() {
     this.status = CardStatus.ACTIVE;
 }
