@@ -27,7 +27,8 @@ public interface AccountMapper {
     // ---------------- UPDATE ----------------
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     @Mapping(target = "status", expression = "java(Account.AccountStatus.valueOf(req.status()))")
-    void updateEntity(@MappingTarget Account account, AccountUpdateReq req);
+    void updateEntity(AccountUpdateReq req, @MappingTarget
+            Account account);
 
     // ---------------- RESPONSE ----------------
     @Mapping(target = "CustomerId", source = "customer.id")
